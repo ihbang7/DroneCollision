@@ -1,0 +1,175 @@
+Plotly.d3.csv('https://raw.githubusercontent.com/ihbang7/DroneCollision/master/drone_result.csv', function(err, rows){
+      function unpack(rows, key) {
+          return rows.map(function(row) 
+          { return row[key]; });
+      }
+
+// Consider the code below to generate the codes below automatically (instead of producing it in Java)
+// var n = rows.length;
+
+// MODIFIED_BY_IVAN(Start)
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+// MODIFIED_BY_IVAN(Finish)
+
+// Replace the code below using the ones produced from Java code (START)
+var selected_color;
+var drone0 = {  // How to modify 'trace' into 'drone'?
+  selected_color: getRandomColor(),
+  x: unpack(rows, 'x0'),
+  y: unpack(rows, 'y0'),
+  z: unpack(rows, 'z0'),
+  mode: 'lines+markers+text',
+  marker: {
+    color: selected_color,
+    size: 6,
+    symbol: 'circle',
+    line: {
+      color: selected_color,
+      width: 0
+    }
+  },
+  line: {
+    color: selected_color,
+    width: 6
+  },
+  type: 'scatter3d',
+  text: ['0','1','2','3','','','',''],
+  textposition: 'top center',
+  textfont: {
+    family:  'Raleway, sans-serif',
+    size: 12
+  }
+};
+var drone1 = {  // How to modify 'trace' into 'drone'?
+  selected_color: getRandomColor(),
+  x: unpack(rows, 'x1'),
+  y: unpack(rows, 'y1'),
+  z: unpack(rows, 'z1'),
+  mode: 'lines+markers+text',
+  marker: {
+    color: selected_color,
+    size: 6,
+    symbol: 'circle',
+    line: {
+      color: selected_color,
+      width: 0
+    }
+  },
+  line: {
+    color: selected_color,
+    width: 6
+  },
+  type: 'scatter3d',
+  text: ['0','1','2','3','4','5','6','7'],
+  textposition: 'top center',
+  textfont: {
+    family:  'Raleway, sans-serif',
+    size: 12
+  }
+};
+var drone2 = {  // How to modify 'trace' into 'drone'?
+  selected_color: getRandomColor(),
+  x: unpack(rows, 'x2'),
+  y: unpack(rows, 'y2'),
+  z: unpack(rows, 'z2'),
+  mode: 'lines+markers+text',
+  marker: {
+    color: selected_color,
+    size: 6,
+    symbol: 'circle',
+    line: {
+      color: selected_color,
+      width: 0
+    }
+  },
+  line: {
+    color: selected_color,
+    width: 6
+  },
+  type: 'scatter3d',
+  text: ['0','1','2','3','','','',''],
+  textposition: 'top center',
+  textfont: {
+    family:  'Raleway, sans-serif',
+    size: 12
+  }
+};
+var drone3 = {  // How to modify 'trace' into 'drone'?
+  selected_color: getRandomColor(),
+  x: unpack(rows, 'x3'),
+  y: unpack(rows, 'y3'),
+  z: unpack(rows, 'z3'),
+  mode: 'lines+markers+text',
+  marker: {
+    color: selected_color,
+    size: 6,
+    symbol: 'circle',
+    line: {
+      color: selected_color,
+      width: 0
+    }
+  },
+  line: {
+    color: selected_color,
+    width: 6
+  },
+  type: 'scatter3d',
+  text: ['0','1','2','3','','','',''],
+  textposition: 'top center',
+  textfont: {
+    family:  'Raleway, sans-serif',
+    size: 12
+  }
+};
+var drone4 = {  // How to modify 'trace' into 'drone'?
+  selected_color: getRandomColor(),
+  x: unpack(rows, 'x4'),
+  y: unpack(rows, 'y4'),
+  z: unpack(rows, 'z4'),
+  mode: 'lines+markers+text',
+  marker: {
+    color: selected_color,
+    size: 6,
+    symbol: 'circle',
+    line: {
+      color: selected_color,
+      width: 0
+    }
+  },
+  line: {
+    color: selected_color,
+    width: 6
+  },
+  type: 'scatter3d',
+  text: ['0','1','2','3','','','',''],
+  textposition: 'top center',
+  textfont: {
+    family:  'Raleway, sans-serif',
+    size: 12
+  }
+};
+  
+var data = [drone0, drone1,drone2, drone3, drone4];
+// Replace the code below using the ones produced from Java code (FINISH)
+
+var layout = {
+  title: '3D Line Plot',
+  autosize: false,
+  width: 700,
+  height: 700,
+  margin: {
+    l: 0,
+    r: 0,
+    b: 0,
+    t: 65
+  }
+};
+Plotly.newPlot('myDiv', data, layout); 
+});
